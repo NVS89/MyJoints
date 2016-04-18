@@ -1,0 +1,84 @@
+﻿<h1>Add User</h1>
+<div class="row">
+    <div class="col-md-5">
+        <form name="addNewForm" ng-submit="submitForm(addNewForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{'has-error': addNewForm.FirstName.$touched && addNewForm.FirstName.$invalid}">
+                <label for="FirstName">First Name</label>
+                <input name="FirstName" 
+                       type="text" 
+                       class="form-control" 
+                       placeholder="Enter title" 
+                       ng-model="user.FirstName"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.FirstName.$error" ng-show="addNewForm.FirstName.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group"  ng-class="{'has-error': addNewForm.LastName.$touched && addNewForm.LastName.$invalid}">
+                <label for="LastName">Last Name</label>
+                <input name="LastName" 
+                       type="text" 
+                       class="form-control" 
+                       placeholder="Enter director" 
+                       ng-model="user.LastName"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.LastName.$error" ng-show="addNewForm.LastName.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': addNewForm.Login.$touched && addNewForm.Login.$invalid}">
+                <label for="Login">Login</label>
+                <input name="Login"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Login"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.Login.$error" ng-show="addNewForm.Login.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': addNewForm.Password.$touched && addNewForm.Password.$invalid}">
+                <label for="Password">Password</label>
+                <input name="Password"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Password"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.Password.$error" ng-show="addNewForm.Password.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': addNewForm.Email.$touched && addNewForm.Email.$invalid}">
+                <label for="Email">Email</label>
+                <input name="Email"
+                       type="email"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Email"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.Email.$error" ng-show="addNewForm.Email.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': addNewForm.Birthday.$touched && addNewForm.Birthday.$invalid}">
+                <label for="Birthday">Birthday</label>
+                <input name="Birthday"
+                       type="date"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Birthday"
+                       required>
+                <div class="help-block" ng-messages="addNewForm.Birthday.$error" ng-show="addNewForm.Birthday.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <a href="/home" class="btn btn-default">Cancel</a>
+            <button type="submit" 
+                    class="btn btn-primary"
+                    ng-disabled="addNewForm.$invalid"
+                    ng-click=" add()">Save</button>
+        </form>
+    </div>
+</div>

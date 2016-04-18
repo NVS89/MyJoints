@@ -1,0 +1,107 @@
+﻿<h1>Edit User</h1>
+
+<div class="row">
+    <div class="col-md-5">
+        <form name="editForm" ng-submit="submitForm(editForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{'has-error': editForm.FirstName.$touched && editForm.FirstName.$invalid}">
+                <label for="FirstName">First Name</label>
+                <input name="FirstName" 
+                       type="text" 
+                       class="form-control" 
+                       placeholder="Enter title" 
+                       ng-model="user.FirstName"
+                       ng-minlength="3"
+                       ng-maxlength="9"
+                       required>
+                <div class="help-block" ng-messages="editForm.FirstName.$error" ng-show="editForm.FirstName.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.LastName.$touched && editForm.LastName.$invalid}">
+                <label for="LastName">LastName</label>
+                <input name="LastName" 
+                       type="text" 
+                       class="form-control" 
+                       placeholder="Enter director" 
+                       ng-model="user.LastName"
+                       ng-minlength="3"
+                       ng-maxlength="12"
+                       required>
+                <div class="help-block" ng-messages="editForm.LastName.$error" ng-show="editForm.LastName.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Login.$touched && editForm.Login.$invalid}">
+                <label for="Login">Login</label>
+                <input name="Login"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Login"
+                       ng-minlength="5"
+                       ng-maxlength="12"
+                       required>
+                <div class="help-block" ng-messages="editForm.Login.$error" ng-show="editForm.Login.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Password.$touched && editForm.Password.$invalid}">
+                <label for="Password">Password</label>
+                <input name="Password"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Password"
+                       ng-minlength="8"
+                       ng-maxlength="18"
+                       required>
+                <div class="help-block" ng-messages="editForm.Password.$error" ng-show="editForm.Password.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Email.$touched && editForm.Email.$invalid}">
+                <label for="Email">Email</label>
+                <input name="Email"
+                       type="email"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Email"
+                       ng-minlength="5"
+                       ng-maxlength="18"
+                       required>
+                <div class="help-block" ng-messages="editForm.Email.$error" ng-show="editForm.Email.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Birthday.$touched && editForm.Birthday.$invalid}">
+                <label for="Birthday">Birthday</label>
+                <input name="Birthday"
+                       type="date"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Birthday"
+                       required>
+                <div class="help-block" ng-messages="editForm.Birthday.$error" ng-show="editForm.Birthday.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.ID.$touched && editForm.ID.$invalid}">
+                <label for="ID">ID</label>
+                <input name="ID"
+                       type="number"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.Id"
+                       readonly>
+                <div class="help-block" ng-messages="editForm.ID.$error" ng-show="editForm.ID.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <a href="/" class="btn btn-default">Cancel</a>
+            <button type="submit" 
+                    class="btn btn-primary"
+                    ng-disabled="editForm.$invalid"
+                    ng-click="edit()">Save</button>
+        </form>
+    </div>
+</div>

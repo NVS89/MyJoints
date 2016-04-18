@@ -1,0 +1,5 @@
+﻿{
+  "Data": {
+      "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=MyJoints;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
